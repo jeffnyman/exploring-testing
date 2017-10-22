@@ -1,0 +1,14 @@
+# Windows Specific
+
+Thumbs.db
+
+# MacOS Specific
+
+*.DS_Store
+._*
+
+# Linux Specific
+
+.directory
+.Trash-*
+
