@@ -21,14 +21,30 @@ The core story file can reference files called "extensions." There are two of my
 
 Extension files are situated such that they go in a directory based on the name of the author.
 
+### Examples
+
+You will notice in the source text lines like _[ Example 215: Magneto's Revenge ]_. These comments are referring to examples that I have taken from the official Inform 7 manuals, but generally repurposed to some extent for pedagogical purposes.
+
+The example number and name will never be modified so that you can easily reference the originals in the Inform 7 manual. This approach allows me to leverage existing material but change it to provide more focused examples of implementation, backed up by tests.
+
+## Game Writing and Playing
+
+The person who creates the interactive fiction is it's author. That's simple enough. But what about the player? The player is obviously the human being playing the game. But that player is controlling a fictional protagonist in the game world. That protagonist is sometimes called the player character (PC). There are also other characters that might be part of a game and those are traditionally called non-player characters (NPCs). Taken together, any entity modeling a person or animal or living entity in such a game world is referred to as an _actor_.
+
 ## Game Creation
 
 There are two parts to creating interactive fiction with Inform 7. The first of those is the creation of the world as it will be at the start of play. This is what the player will initially encounter. The second aspect are the rules of play. These rules govern what will happen as the player explores the world, trying things out.
 
 ## Game Interaction
 
-The core of these kinds of games is players interacting with the environment. This takes place via a kind of "conversation" where the player types in commands to the game -- to a fictional protagonist -- and the game responds to those command requests by saying that protagonist did and what happened as a result. Just like the real world, this game world has rules that apply to it and these rules are what dictates the type of responses.
+In terms of interaction, the core idea is players interacting with an environment. This takes place via a kind of "conversation" where the player types in commands to the game and the game responds to those command requests by saying what the actor who received the command did and what happened as a result. Just like the real world, this game world has rules that apply to it and these rules are what dictates the type of responses.
 
 The Inform 7 manual says that Inform will provide only "provide a basic, penny-plain, vanilla flavored sort of realism." Specifically there are "basic rules of realism" that every Inform project begins with.
 
-What this means is that an Inform game has a set of physical laws built into it already. Some examples are inanimate objects do not spontaneously move or change, one solid object cannot pass through another, there are opaque barriers through which light cannot pass, and so on. These rules can stop many attempted actions.
+What this means is that an Inform game has a set of physical laws built into it already. Some examples are inanimate objects do not spontaneously move or change, one solid object cannot pass through another, there are opaque barriers through which light cannot pass, and so on. These rules can stop many attempted actions. A very common example is that built-in rules ensure that actions are rejected if the actor would need to touch something that's out of reach or see something that's invisible.
+
+## Game Actions
+
+When a player explores interactive fiction, that exploration takes the form of a series of actions. The author's role, when creating such interactive fiction, is thus responding to those actions. As per the above, Inform imposes rules on actions. But it's also possible for authors to impose extra rules on those actions.
+
+It's this interplay of action and rule that provides fertile ground for considering how to test such games, both in exploratory and scripted fashion.
