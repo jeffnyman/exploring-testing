@@ -5,6 +5,9 @@ Include i7Spec by Jeff Nyman.
 
 The Test Lab is a room.
 
+The Lobby is a room.
+It is south of the Test Lab.
+
 [ =================================================== ]
 [ Example 215: Magneto's Revenge ]
 
@@ -49,11 +52,26 @@ Check someone taking the poison gas:
 Unsuccessful attempt by Kitty Pryde taking the poison gas:
 	say "Kitty looks at you as if you were an idiot. 'How exactly do you expect me to do that?'"
 
+[ There needs to be a way to have a conclusion. One such can happen via a check on every turn to see if the player has been exposed to the gas. ]
+
+Every turn:
+	if the player can touch the poison gas for more than one turn:
+		say "The poison gas has reached your lungs.";
+		if Kitty Pryde can see the player:
+			say "Kitty seems to take a disturbing interest in your writhing spasms.";
+		end the story.
+
 
 [ +++++++++++++++++++++++++++++++++++++++++++++++++++ ]
 [ Script Tests ]
 
-Test me with "open glass box / examine message / take the message / Kitty, get the message / look at the box / Kitty, take the gas".
+Test phasing_mechanics with "open glass box / examine message / take the message / Kitty, get the message / look at the box / Kitty, take the gas."
+
+Test death_with_kitty with "Kitty, open the box / wait".
+
+Test death_alone with "Kitty, open the box / Kitty, go south."
+
+Test death_delayed with "Kitty, open the box / south / north / wait".
 
 
 [ +++++++++++++++++++++++++++++++++++++++++++++++++++ ]
