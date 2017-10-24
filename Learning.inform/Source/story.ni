@@ -65,17 +65,17 @@ Every turn:
 [ +++++++++++++++++++++++++++++++++++++++++++++++++++ ]
 [ Script Tests ]
 
-Test phasing_mechanics with "open glass box / examine message / take the message / Kitty, get the message / look at the box / Kitty, take the gas."
+[ With the exception of the dying alone (or dying in front of Kitty, depending on which condition you want), the entire test suite can be reduced to one test. ]
 
-Test death_with_kitty with "Kitty, open the box / wait".
+Test phasing with "open glass box/ examine message / take the message / Kitty, get the message / look at the box / Kitty, take the gas / Kitty, open the box / south / north / wait".
 
 Test death_alone with "Kitty, open the box / Kitty, go south."
-
-Test death_delayed with "Kitty, open the box / south / north / wait".
 
 
 [ +++++++++++++++++++++++++++++++++++++++++++++++++++ ]
 [ Spec Tests ]
+
+[ You can't test death states via the scenarios and that's because there is a meta game aspect that occurs: namely, your death. This forces Inform to ask the player what the want to (quit the game, restore a saved position, etc). ]
 
 Scenario:
 	context "player can't open the glass box and accidentally kill themselves";
